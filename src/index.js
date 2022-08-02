@@ -1,15 +1,18 @@
-import _ from 'lodash';
+import _, { drop } from 'lodash';
 import './styles/style.scss';
 
 
-function component() {
-  const element = document.createElement('div');
+function dragDown() {
+  // console.log(e.target.classList);
+  const dropdown = document.querySelector('.dropdown-js');
+  dropdown.addEventListener('mouseup', ()=>{
+    const menu = document.querySelector('.dropdown-menu');
+    const attri = menu.getAttribute('data-visible');
 
- // Lodash, currently included via a script, is required for this line to work
- // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
+    attri == 'true' ? menu.setAttribute('data-visible', false) : menu.setAttribute('data-visible', true);
+  })
 }
-
-document.body.appendChild(component());
+dragDown();
+// document.addEventListener('click', (e)=>{
+//   dragDown(e);
+// })

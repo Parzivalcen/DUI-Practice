@@ -10,22 +10,142 @@ li{
 
 /* FONT FAMILY */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
-
-nav{
+body{
   font-family: "Roboto", sans-serif;
+  background-color: rgb(58, 75, 59);
+  h1{
+    color: $text;
+  }
+  .title{
+    margin-top: 10vh;
+  }
+}
+.css-drop-down{
+  // padding: 1em;
+  align-items: center;
   background-color: $black-bg;
   color: $text;
+  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: space-around;
   ul{
-    gap: 4vh;
     display: flex;
-
-    menu{
-      ul{
-        flex-direction: column;
-        gap: 1vh;
+    // gap: 2vh;
+    li{
+      width: 10vh;
+      padding-block: 2vh;
+      padding-left: 1vh;
+      cursor: pointer;
+    }
+    .dropdown{
+      position: relative;
+      display: flex;
+      min-width: 10vh;
+      span{
+        display: block;
+        width: 2.3vh;
+        height: 2.3vh;
+        -webkit-mask-image: url(../imgs/arrowDown.svg) ;
+        mask-image: url(../imgs/arrowDown.svg) ;
+        -webkit-mask-repeat: no-repeat;
+        background-color: white;
+        mask-repeat: no-repeat;
       }
+      .drop-down-menu{
+        position: absolute;
+        max-width: 11vh;
+        top: 100%;
+        left: 0;
+        padding: 0vh;
+        flex-direction: column;
+        gap: 2vh;
+        background-color: $text;
+        color: $black-bg;
+        background-color: $text;
+        color: $black-bg;
+        display: none;
+        li{
+          width: 10vh;
+          padding: 0px ;
+          padding-left: 1vh;
+          padding-block: 1vh;
+          &:hover{
+            background-color: $black-bg;
+            color: $text;
+            transition: linear 0.3s;
+          }
+        }
+      }
+      &:hover{
+        color: $black-bg;
+        background-color: $text;
+
+      }
+      &:hover .drop-down-menu{
+        display: block;
+      }
+    }
+    .drop-down-menu{
+      animation: dragDown 300ms forwards;
+      transform-origin: top center;
+
+    }
+    @keyframes dragDown {
+      0%{
+        transform: scaleY(0) ;
+      }
+      80%{
+        transform: scaleY(1.1);
+      }
+      100%{
+        transform: scaleY(1);
+      }
+      
+    }
+
+  }
+
+}
+.js-dropdown{
+  display: flex;
+  align-items: center;
+  justify-content: space-around ;
+  background-color: $black-bg;
+  color: $text;
+  .items{
+    display: flex;
+    gap: 2vh;
+    li{
+      padding-block: 2vh;
+      padding-left: 1vh;
+    }
+    .dropdown-js{
+      position: relative;
+      width: 10vh;
+      .dropdown-menu{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding: 0vh;
+        top: 6vh;
+        background-color: $text;
+        color: $black-bg;
+        width: 0px;
+        height: 0px;
+        font-size: 0px;
+        li{
+          padding: 0vh;
+        }
+      }
+      [data-visible = true]{
+        width: 90%;
+        height: 10vh;
+        font-size: 1rem;
+        padding-top: 1vh;
+        padding-left: 1vh;
+        gap: 1vh
+      }
+      
     }
   }
 }

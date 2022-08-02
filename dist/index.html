@@ -7,20 +7,36 @@
   <title>Dynamic</title>
 </head>
 <body>
-  <nav>
+  <h1 class="title">CSS dropdown</h1>
+  <nav class="css-drop-down">
     <h1>Home</h1>
     <ul>
       <li>projects</li>
       <li>blog</li>
-      <li>
-        <menu>
+      <li class="dropdown">
           Menu <span class="menu-icon"></span>
-          <ul class="drop-down" data-visible="false">
+          <ul class="drop-down-menu" data-visible="false">
             <li>products</li>
             <li>clients</li>
             <li>about me</li>
           </ul>
-        </menu>
+      </li>
+    </ul>
+  </nav>
+  <!-- JAVA SCRIPT -->
+  <h1 class="title">JavaScript dropdown</h1>
+  <nav class="js-dropdown">
+    <h1>JavaScript</h1>
+    <ul class="items">
+      <li>mobile</li>
+      <li>desktop</li>
+      <li class="dropdown-js">
+        more <span class="menu-icon"></span>
+        <ul class="dropdown-menu" data-visible="false">
+          <li>projects</li>
+          <li>about</li>
+          <li>go to</li>
+        </ul>
       </li>
     </ul>
   </nav>
