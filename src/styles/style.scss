@@ -165,10 +165,19 @@ body{
 }
 
 .mobile{
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
   background-color: $black-bg;
   color: $text;
+  display: flex;
+  justify-content: space-between;
+  // gap: 2vh;
   .btn{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: capitalize;
     .all-tasks-i{
       width: 4vh;
       height: 4vh;
@@ -181,8 +190,8 @@ body{
     .work-i{
       width: 4vh;
       height: 4vh;
-      -webkit-mask-image: url(../imgs/check.svg) ;
-      mask-image: url(../imgs/check.svg) ;
+      -webkit-mask-image: url(../imgs/work.svg) ;
+      mask-image: url(../imgs/work.svg) ;
       -webkit-mask-repeat: no-repeat;
       background-color: $text;
       mask-repeat: no-repeat;
@@ -190,8 +199,8 @@ body{
     .add-cat-i{
       width: 4vh;
       height: 4vh;
-      -webkit-mask-image: url(../imgs/check.svg) ;
-      mask-image: url(../imgs/check.svg) ;
+      -webkit-mask-image: url(../imgs/plus.svg) ;
+      mask-image: url(../imgs/plus.svg) ;
       -webkit-mask-repeat: no-repeat;
       background-color: $text;
       mask-repeat: no-repeat;
@@ -199,12 +208,26 @@ body{
     .all-cat-i{
       width: 4vh;
       height: 4vh;
-      -webkit-mask-image: url(../imgs/check.svg) ;
-      mask-image: url(../imgs/check.svg) ;
+      -webkit-mask-image: url(../imgs/library.svg) ;
+      mask-image: url(../imgs/library.svg) ;
       -webkit-mask-repeat: no-repeat;
       background-color: $text;
       mask-repeat: no-repeat;
-    }
-    
+    }    
   }
+  .categories{
+    position: fixed;
+    top: 0;
+    inset: 0 0 0 20%;
+    height: 100vh;
+    background-color: $black-bg;
+    padding-top: 8vh;
+    padding-left: min(8vh, 10vh);
+    transform: translateX(+100%);
+    transition: 0.3s ease-in-out;
+    &[data-visible=true]{
+      transform: translateX(0%);
+    }
+  }
+  
 }
