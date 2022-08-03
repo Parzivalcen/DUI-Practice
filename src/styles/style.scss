@@ -213,10 +213,32 @@ body{
       -webkit-mask-repeat: no-repeat;
       background-color: $text;
       mask-repeat: no-repeat;
-    }    
+      z-index: 888;
+    } 
   }
+  .btn{
+    &[aria-selected=true]{
+      .task-icon{
+        background-color: green;
+      }
+    }
+  }
+  .all-cat-btn{
+    &[aria-expanded=true]{
+      .all-cat-i{
+        position: absolute;
+        top: -90vh;
+        -webkit-mask-image: url(../imgs/Close.svg) ;
+        mask-image: url(../imgs/Close.svg) ;
+        z-index: 999;
+      }
+    }
+  }   
   .categories{
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
     top: 0;
     inset: 0 0 0 20%;
     height: 100vh;
@@ -225,6 +247,7 @@ body{
     padding-left: min(8vh, 10vh);
     transform: translateX(+100%);
     transition: 0.3s ease-in-out;
+
     &[data-visible=true]{
       transform: translateX(0%);
     }

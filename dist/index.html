@@ -45,31 +45,30 @@
   <h1 class="title">Mobile nav</h1>
   <nav class="mobile">
     <!-- btn -->
-    <div class="btn">
+    <div class="btn all-tasks-btn" aria-selected="true">
       <i class="task-icon all-tasks-i"></i>
       <p class="tab-text">all tasks</p>
     </div>
     <!-- btn -->
-    <div class="btn">
+    <div class="btn work-btn" aria-selected="false">
       <i class="task-icon work-i"></i>
       <p class="tab-text">work</p>
     </div>
     <!-- btn -->
-    <div class="btn">
+    <div class="btn add-cat-btn" aria-selected="false">
       <i class="task-icon add-cat-i"></i>
       <p class="tab-text">add category</p>
     </div>
     <!-- btn -->
-    <div class="btn">
+    <div class="btn all-cat-btn" aria-expanded="false">
       <i class="task-icon all-cat-i"></i>
       <p class="tab-text">categories</p>
     </div>
     <ul class="categories" data-visible="false">
-      <button class="close-categories"></button>
-      <li>project 01</li>
-      <li>project 02</li>
-      <li>project 03</li>
-      <li>project 04</li>
+      <li class="category" aria-selected="false">project 01</li>
+      <li class="category" aria-selected="false">project 02</li>
+      <li class="category" aria-selected="false">project 03</li>
+      <li class="category" aria-selected="false">project 04</li>
     </ul>
   </nav>
   <script src="./main.bundle.js"></script>
